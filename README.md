@@ -1,4 +1,4 @@
-# PDF Analyzer V1 — Cement Technical Assistant
+# PDF Analyzer V1 — Ceme Technical Assistant
 
 Batch analyzer for a 20-book pilot. It preserves document/page/bbox provenance.
 
