@@ -5,3 +5,4 @@ __pycache__/
 data/raw/*.pdf
 data/processed/
 data/catalog/
+.venv_paddle/ 

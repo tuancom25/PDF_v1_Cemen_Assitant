@@ -1,0 +1,151 @@
+app/
+│
+├── models/
+│   ├── document.py
+│   ├── page.py
+│   ├── content_block.py
+│   ├── semantic_block.py
+│   ├── semantic_group.py
+│   └── chunk.py
+│
+├── ingestion/
+│   ├── pdf_reader/
+│   ├── classifier/
+│   ├── ocr/
+│   └── layout/
+│
+├── reconstruction/
+│   ├── reconstruct.py
+│   ├── column_detector.py
+│   ├── reading_order.py
+│   └── unassigned_group.py
+│
+├── group/
+│   ├── group_builder.py
+│   └── ...
+│
+├── semantic/
+│   ├── semantic.py
+│   ├── role_detector.py
+│   ├── semantic_group.py
+│   └── semantic_validator.py
+│
+├── chunking/
+│   ├── chunker.py
+│   ├── chunk_builder.py
+│   └── chunk_validator.py
+│
+├── embedding/
+│   ├── embedder.py
+│   └── ...
+│
+├── retrieval/
+│   ├── retriever.py
+│   └── ...
+│
+└── rag/
+    ├── context_builder.py
+    └── ...
+
+
+
+                    PDF
+                     │
+                     ▼
+              ┌─────────────┐
+              │  INGESTION  │
+              └──────┬──────┘
+                     │
+             Page / OCR / Layout
+                     │
+                     ▼
+            ┌─────────────────┐
+            │ RECONSTRUCTION  │
+            └────────┬────────┘
+                     │
+              ContentBlock[]
+                     │
+                     ▼
+               ┌───────────┐
+               │   GROUP   │
+               └─────┬─────┘
+                     │
+              grouped blocks
+                     │
+                     ▼
+              ┌─────────────┐
+              │  SEMANTIC   │
+              └──────┬──────┘
+                     │
+        SemanticContentBlock[]
+                     │
+                     ▼
+              SemanticGroup[]
+                     │
+                     ▼
+              ┌─────────────┐
+              │  CHUNKING   │
+              └──────┬──────┘
+                     │
+                  Chunk[]
+                     │
+                     ▼
+              ┌─────────────┐
+              │  EMBEDDING  │
+              └──────┬──────┘
+                     │
+                     ▼
+               Vector Store
+                     │
+                     ▼
+                Retrieval
+                     │
+                     ▼
+                   RAG
+service/
+│
+├── ingestion/       ← 3 tầng đầu đã code
+│   ├── ...
+│   ├── reconstruct
+│   ├── column
+│   ├── reading_order
+│   └── ...
+│
+├── group/            ← bắt đầu tách riêng từ đây
+├── semantic/
+├── chunking/
+├── embedding/
+├── retrieval/
+└── rag/
+
+# ====== Xử lý phần   SemanticGroup ============== 
+{ GroupSemantic
+
+Vì cách đọc tự nhiên là:
+
+Semantic Group = nhóm mang ý nghĩa semantic.
+
+Còn GroupSemantic nghe giống tên một operation hơn. }
+
+
+Kiến trúc lúc này rất rõ
+
+INGESTION
+    ↓
+ContentBlock
+    ↓
+GROUP
+    ↓
+UnassignedGroup / Group
+    ↓
+SEMANTIC
+    ↓
+SemanticContentBlock
+    ↓
+SemanticGroup
+    ↓
+CHUNKING
+    ↓
+Chunk
+    ↓
+EMBEDDING

@@ -1,0 +1,9 @@
+{
+  "version": "ver_5_x_page_x",
+  "embedding_model": "BAAI/bge-m3",
+  "dimension": 1024,
+  "normalize": true,
+  "index_type": "IndexFlatIP",
+  "metric": "inner_product",
+  "total_vectors": 1931
+}

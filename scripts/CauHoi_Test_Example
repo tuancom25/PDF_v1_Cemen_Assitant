@@ -1,0 +1,64 @@
+English → English
+Query:
+What factors affect free lime formation in clinker?
+
+Chunk:
+High free lime may result from insufficient burning temperature,
+poor raw meal homogenization, or inadequate kiln operation.
+
+
+Vietnamese → English
+Query:
+Những yếu tố nào làm hàm lượng free lime trong clinker tăng?
+
+Chunk:
+High free lime may result from insufficient burning temperature,
+poor raw meal homogenization, or inadequate kiln operation.
+
+Vietnamese + technical terminology
+Query:
+Tại sao free lime trong clinker lại cao khi burning zone temperature thấp?
+
+Chunk:
+Low burning zone temperature can result in incomplete clinker
+formation and increased free lime content.
+
+#----------------------------------------------
+
+Đặc biệt phải test "technical cross-language"
+
+Không được benchmark bằng những câu kiểu:
+
+What is cement?
+
+Phải dùng câu thực tế:
+"Nguyên nhân làm free lime tăng trong clinker?"
+
+"Tại sao coating trong burning zone bị bong?"
+
+"Vai trò của tertiary air trong precalciner là gì?"
+
+"Gió giả ảnh hưởng thế nào đến kiln efficiency?"
+
+"Tại sao nhiệt độ calciner ảnh hưởng đến calcination?"
+
+1. What factors affect free lime formation in clinker?
+
+2. Why does high free lime occur in clinker?
+
+3. What causes high C3A in clinker?
+
+4. How does raw meal fineness affect clinker quality?
+
+5. What is the effect of high alkali content on kiln operation?
+
+6. What causes coating formation in the rotary kiln?
+
+7. What factors affect clinker burnability?
+
+8. How does cooling rate affect clinker mineralogy?
+
+9. What causes high liter weight of clinker?
+
+10. What causes high SO3 circulation in a cement kiln?
+
